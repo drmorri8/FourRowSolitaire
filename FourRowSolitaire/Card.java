@@ -1,6 +1,5 @@
 /*
     This file is a part of Four Row Solitaire
-    This is just a test comment. Josh.
 
     Copyright (C) 2010 by Matt Stephen
 
@@ -86,11 +85,11 @@ public class Card extends JComponent
 
             if(deckNumber >= 1 && deckNumber <= ChangeAppearance.NUM_DECKS)
             {
-                cardBack = "images/cardbacks/cardback" + deckNumber + ".png";
+                cardBack = "/images/cardbacks/cardback" + deckNumber + ".png";
             }
             else
             {
-                cardBack = "images/cardbacks/cardback3.png";
+                cardBack = "/images/cardbacks/cardback3.png";
             }
 
             initializeCardImageString();
@@ -100,7 +99,7 @@ public class Card extends JComponent
             cardSuit = INVALID_SUIT;
             cardNumber = INVALID_NUMBER;
 
-            cardImageString = "images/invalidcard.png";
+            cardImageString = "/images/invalidcard.png";
         }
 
         setFaceUp();
@@ -141,8 +140,9 @@ public class Card extends JComponent
 
     public void setFaceUp()
     {
-        faceUp = true;
-
+    	faceUp = true;
+    	
+    	
         try
         {
             URL imageURL = this.getClass().getResource(cardImageString);
@@ -195,8 +195,8 @@ public class Card extends JComponent
 
     private void initializeCardImageString()
     {
-        cardImageString = "images/cardfaces/";
-        cardHighlighted = "images/highlightedfaces/";
+        cardImageString = "/images/cardfaces/";
+        cardHighlighted = "/images/highlightedfaces/";
 
         if(cardSuit.equals(SPADES_SUIT))
         {
@@ -283,14 +283,14 @@ public class Card extends JComponent
             cardImageString += "Queen";
             cardHighlighted += "Queen";
         }
-        else //if(cardNumber == KING)
+        else // if(cardNumber == KING)
         {
             cardImageString += "King";
             cardHighlighted += "King";
         }
 
         cardImageString += ".png";
-        cardHighlighted += "H.png";
+        cardHighlighted += "H.png";  	
     }
 
     public BufferedImage getImage()
