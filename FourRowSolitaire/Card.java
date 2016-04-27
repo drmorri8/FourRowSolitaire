@@ -339,4 +339,26 @@ public class Card extends JComponent
         Card card = new Card(cardSuit, cardNumber, deckNumber, fullCardNumber);
         return card;
     }
+    
+    /**
+     * Returns the string representation of the card.
+     */
+    public String toString()
+    {
+    	String out = "";
+    	if (cardNumber == 1)
+    		out += "Ace";
+    	else if (cardNumber == 11)
+    		out += "Jack";
+    	else if (cardNumber == 12)
+    		out += "Queen";
+    	else if (cardNumber == 13)
+    		out += "King";
+    	else if (cardNumber == -1)
+    		out += "INVALID NUMBER";
+    	else
+    		out += cardNumber;
+    	out += " of " + cardSuit;
+    	return  out;
+    }
 }
