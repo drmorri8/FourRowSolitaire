@@ -121,12 +121,12 @@ public class ChangeAppearance extends JDialog implements ActionListener
         buttonPanel.add(ok);
 
         cardBackLabel.setIcon(new ImageIcon(this.getClass().getResource
-                ("//images/cardbacks/cardback" + deckNumber + ".png")));
+                ("/images/cardbacks/cardback" + deckNumber + ".png")));
         JPanel cardBackViewer = new JPanel();
         cardBackViewer.add(cardBackLabel);
 
         backgroundLabel.setIcon(new ImageIcon(this.getClass().getResource
-                ("//images/backgrounds/background" + backgroundNumber + "small.jpg")));
+                ("/images/backgrounds/background" + backgroundNumber + "small.jpg")));
         JPanel backgroundViewer = new JPanel();
         backgroundViewer.add(backgroundLabel);
 
