@@ -35,8 +35,8 @@ import javax.swing.event.MouseInputAdapter;
  */
 public class SolitaireBoard extends JFrame
 {
-    public static final int GAME_WON = 0;
-    public static final int GAME_LOST = 1;
+    public static final int GAME_WON = 1;
+    public static final int GAME_LOST = 0;
     public static final int RESET_STATS = 2;
     public static final int DO_NOTHING = 3;
     public static final int GAME_SAVED = 4;
@@ -95,7 +95,6 @@ public class SolitaireBoard extends JFrame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setIconImage(new ImageIcon(getClass().getResource("/images/logo.png")).getImage());
-
         setVisible(true);
 
         addWindowListener(wl);
@@ -105,7 +104,7 @@ public class SolitaireBoard extends JFrame
     {
         mainPanel = new SolitairePanel();
         mainPanel.setLayout(new SolitaireLayout());
-
+      
         deck = new Deck(deckNumber);
         mainPanel.changeBackground(backgroundNumber);
 
@@ -1212,6 +1211,13 @@ public class SolitaireBoard extends JFrame
                 else
                 {
                     CardStack temp = tempDest.getStack(num);
+                    
+                    for(int i = 0; i < num; i++)
+                    {
+                    	tempDest.pop();
+                    }
+                    
+                    tempDest.peek().unhighlight();
                     tempSource.addStack(temp);
                 }
 

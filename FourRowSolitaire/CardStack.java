@@ -74,12 +74,12 @@ public class CardStack extends JLayeredPane
 
     public synchronized Card pop()
     {
-	Card card = peek();
+    	Card card = peek();
 
         this.remove(card);
-	cards.remove(cards.size() - 1);
+        cards.remove(cards.size() - 1);
 
-	return card;
+        return card;
     }
 
     public CardStack pop(CardStack stack)
@@ -99,17 +99,17 @@ public class CardStack extends JLayeredPane
 
     public synchronized Card peek()
     {
-	if (cards.isEmpty())
-        {
-            return null;
-        }
+		if (cards.isEmpty())
+	        {
+	            return null;
+	        }
 
-	return cards.lastElement();
+		return cards.lastElement();
     }
 
     public boolean isEmpty()
     {
-	return cards.size() == 0;
+    	return cards.size() == 0;
     }
 
     public int length()
@@ -119,14 +119,14 @@ public class CardStack extends JLayeredPane
 
     public synchronized int search(Card card)
     {
-	int i = cards.lastIndexOf(card);
-
-	if (i >= 0)
-        {
-	    return cards.size() - i;
-	}
-
-	return -1;
+		int i = cards.lastIndexOf(card);
+	
+		if (i >= 0)
+	        {
+		    return cards.size() - i;
+		}
+	
+		return -1;
     }
 
     public Card getCardAtLocation(int index)
@@ -228,8 +228,8 @@ public class CardStack extends JLayeredPane
 
         for(int i = length(); i > index; i--)
         {
-            temp.push(getCardAtLocation(cards.size() - i - 1).clone());
-            getCardAtLocation(cards.size() - i - 1).highlight();
+            temp.push(getCardAtLocation(i - 1).clone());
+            getCardAtLocation(i - 1 -1).highlight();
         }
 
         return temp;
