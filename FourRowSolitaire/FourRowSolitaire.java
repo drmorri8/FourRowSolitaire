@@ -137,7 +137,7 @@ public class FourRowSolitaire extends SolitaireBoard implements ActionListener
         String fileLocation = System.getProperty("user.home") + System.getProperty("file.separator");
         int count = 0, temp = 0, correctedStatistics = -2;
         int newDrawCount = 1, timerStatus = 0, deckNumber = 3, backgroundNumber = 2;
-        int saved = 0, winAnimation = 0, winSounds = 0, drawCount = 1, deckThroughs = 1;
+        int saved = 0, winAnimation = 1, winSounds = 0, drawCount = 1, deckThroughs = 1;
         int difficulty = 2, newDifficulty = 2;
         
         try
@@ -249,6 +249,8 @@ public class FourRowSolitaire extends SolitaireBoard implements ActionListener
                     System.err.println("Problem Loading Saved Game (More or Less Than 52 Cards Stored)... Starting New Game");
                     super.createBoard(null);
                 }
+                
+                input.close();
             }
             catch(Exception ex)
             {
