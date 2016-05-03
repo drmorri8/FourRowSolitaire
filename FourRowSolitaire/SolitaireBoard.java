@@ -1216,8 +1216,6 @@ public class SolitaireBoard extends JFrame
                     {
                     	tempDest.pop();
                     }
-                    
-                    tempDest.peek().unhighlight();
                     tempSource.addStack(temp);
                 }
 
