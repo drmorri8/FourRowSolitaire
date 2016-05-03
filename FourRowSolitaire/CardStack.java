@@ -229,7 +229,7 @@ public class CardStack extends JLayeredPane
         for(int i = length(); i > index; i--)
         {
             temp.push(getCardAtLocation(i - 1).clone());
-            getCardAtLocation(i - 1 -1).highlight();
+            getCardAtLocation(i - 1).highlight();
         }
 
         return temp;
